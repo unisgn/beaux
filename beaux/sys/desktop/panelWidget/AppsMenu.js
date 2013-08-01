@@ -18,7 +18,21 @@
 							text: 'UOM'
 						}]
 					},{
-						text: 'Logout'
+						text: 'Logout',
+						handler: function() {
+							Ext.Ajax.request({
+								url: '../logout/logout',
+							});
+						}
+					},{
+						text: 'login',
+						handler: function() {
+							Ext.Ajax.request({
+								url:'../j_spring_security_check?j_username=root&j_password=root',
+								method: 'POST'
+							})
+						}
+					}
 					}]
 				},{
 					xtype: 'button',
