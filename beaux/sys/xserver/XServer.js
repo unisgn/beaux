@@ -15,10 +15,8 @@ Ext.define('Beaux.sys.xserver.XServer', {
 	getRootXWindow: function() {
 		return this.rootXWindow;
 	},
-	
-	/**
-	 * @public
-	 * /
+
+
 	resetRootXWindow: function(win) {
 		var me = this;
 		if(me.rootXWindow) { 
@@ -30,9 +28,7 @@ Ext.define('Beaux.sys.xserver.XServer', {
 		me.rootXWindow.show();
 	},
 	
-	/**
-	 * @public
-	 * /
+
     main: function() {
 		var me = this;
 		me.viewport = Ext.create('Ext.container.Viewport', {layout: 'fit'});
