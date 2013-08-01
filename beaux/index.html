@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Beaux Is Ready</title>
+
+    <link rel="stylesheet" type="text/css" href="../extjs/resources/css/ext-all-debug.css" />
+    <link rel="stylesheet" type="text/css" href="beaux.css" />
+ 
+
+    <!-- GC -->
+
+
+    <script type="text/javascript" src="../extjs/ext-all-dev.js"></script>
+
+    <script type="text/javascript">
+
+		console.log('start ext;');
+        Ext.Loader.setConfig({
+			enabled: true,
+			paths: {
+				'Beaux': '.',
+				'Alcedo': './usr/alcedo',
+			},
+        });
+        Ext.require('Beaux.core.Beaux');
+
+        Ext.onReady(function () {
+    
+                console.log('start beaux boot;');
+                Beaux.core.Beaux.main();
+                console.log('beaux loaded;');
+        });
+    </script>
+</head>
+
+<body>
+
+</body>
+</html>
