@@ -1,15 +1,15 @@
 ﻿Ext.define('Beaux.sys.desktop.lib.XWindow', {
-	extend: 'Ext.window.Window',
+    extend: 'Ext.window.Window',
 
     requires:[
         'Beaux.sys.desktop.lib.WindowManager',
         'Beaux.sys.desktop.Cassie',
     ],
-	
-	/**
+    
+    /**
      * @override
      * @cfg
-	 * function called on ESC key stroke
+     * function called on ESC key stroke
      */
     onEsc: Ext.emptyFn,
 
@@ -18,14 +18,14 @@
      * @cfg
      * set false to make transform css functionly properly;
      */
-	shadow: false,
+    shadow: false,
 
     /**
      * @override
      * @cfg
      * set false to make drag function with full dynamic contents;
      */
-	ghost: false,
+    ghost: false,
 
     liveDrag: true,
 
@@ -34,48 +34,48 @@
      * @cfg 
      * set dymanic to make resize function with full dynamic contents;
      */
-	resizable: {
-		dynamic: true,
-	},
+    resizable: {
+        dynamic: true,
+    },
 
     /**
      * @override
      * @cfg
      */
     maximizable: true,
-	
+    
     /**
      * @property
      * flag to detect this window has any transform css;
      * 
      */
-	transformed: false,
-	
-	
-	
-	/**
+    transformed: false,
+    
+    
+    
+    /**
      * @property
      * @private
      *
      */
-	freezed: false,
+    freezed: false,
 
     /**
      * @property
      * @private
      * windowManager
      */
-	wm: null,
-	
+    wm: null,
+    
 
     /**
      * @property
      * the application which this window belongs to
      */
-	application: null,
+    application: null,
 
     /**
-	 * @private
+     * @private
      * @property
      * @readonly
      * the desktop
@@ -83,158 +83,158 @@
      */
     desktop: null,
     desk: null,
-	
-	
+    
+    
     /**
      * @override
      * @private
      */
-	initComponent: function(cfg) {
-		var me = this;
-		
-		me.wm = me.getWindowManager();
-		me.desktop = me.getDesktop();
+    initComponent: function(cfg) {
+        var me = this;
+        
+        me.wm = me.getWindowManager();
+        me.desktop = me.getDesktop();
         me.desk = me.getDesktop().getRootXWindow().getDesk();
-		me.callParent(cfg);
+        me.callParent(cfg);
 
-		me.wm.registerWindow(me);
-	},
+        me.wm.registerWindow(me);
+    },
 
     /**
      * @private
      */
-	getWindowManager: function() {
-		return Beaux.sys.desktop.lib.WindowManager;
-	},
-	getDesktop: function() {
-		return Beaux.sys.desktop.Cassie;
-	},
+    getWindowManager: function() {
+        return Beaux.sys.desktop.lib.WindowManager;
+    },
+    getDesktop: function() {
+        return Beaux.sys.desktop.Cassie;
+    },
 
     /**
-	 * @public
-	 * @returns {Beaux.sys.application.Application}
+     * @public
+     * @returns {Beaux.sys.application.Application}
      */
-	getApplication: function() {
-		return this.application;
-	},
-	
-	/**
-	 * @private
-	 * support for transform function;
-	 *
-	 */
-	freeze: function() {
-		var me = this;
-		if(me.dd) {
-			me.dd.disable();
-		}
-		if(me.resizer) {
-			me.resizer.disable();
-		}
-		
-		/**
-		 * when windows are arranged by WindowArranger, this onClick event would
-		 * trigger an event to resetWindows and make sure 2 things:
-		 * 1, when click the close button only to close window without trigger resetWindows;
-		 * 2, when click the body of the window should trigger resetWindows;
-		 * an alternative way to do so might be use the onActivate event, but with 2 problems:
-		 * 1, when click the close button it would trigger the activate event, 
-		 * so to trigger resetWindows, not what is wanted;
-		 * 2, when click the body of the window, the Ext wouldn't trigger the activate event,
-		 * (probably a BUG) and so can not trigger the resetWindows event, not what is wanted;
-		 *
-		 */
-		me.body.on('click', me.onFreezeBodyClick, me);		
-		me.freezed = true;
-	},
-	
-	/**
-	 * @private
-	 * 
-	 */
-	defreeze: function() {
-		var me = this;
-		if(me.dd) {
-			me.dd.enable();
-		}
-		if(me.resizer) {
-			me.resizer.enable();
-		}
-		me.body.un('click', me.onFreezeBodyClick, me);		
-		me.freezed = false;
-	},
+    getApplication: function() {
+        return this.application;
+    },
+    
+    /**
+     * @private
+     * support for transform function;
+     *
+     */
+    freeze: function() {
+        var me = this;
+        if(me.dd) {
+            me.dd.disable();
+        }
+        if(me.resizer) {
+            me.resizer.disable();
+        }
+        
+        /**
+         * when windows are arranged by WindowArranger, this onClick event would
+         * trigger an event to resetWindows and make sure 2 things:
+         * 1, when the close button clicked, only to close window without trigger resetWindows;
+         * 2, when the body of the window clicked, should trigger resetWindows;
+         * to achive this, an alternative way might be using the onActivate event, but with 2 problems:
+         * 1, when the close button clicked, it would trigger the activate event, 
+         * so to trigger resetWindows, not wanted;
+         * 2, when the body of the window clicked, the Ext wouldn't trigger the activate event,
+         * (probably a BUG) and so can not trigger the resetWindows event, not wanted;
+         *
+         */
+        me.body.on('click', me.onFreezeBodyClick, me);        
+        me.freezed = true;
+    },
+    
+    /**
+     * @private
+     * 
+     */
+    defreeze: function() {
+        var me = this;
+        if(me.dd) {
+            me.dd.enable();
+        }
+        if(me.resizer) {
+            me.resizer.enable();
+        }
+        me.body.un('click', me.onFreezeBodyClick, me);        
+        me.freezed = false;
+    },
 
-	/**
-	 * @public
-	 * @returns {Beaux.sys.desktop.lib.XWindow}
-	 */
-	transform: function(_scale, _dx, _dy) {
-		var me = this;
-		if(!me.transformed) {
-			var _cls = 'XWindow-transform-' + me.id;
-			var _cssText = '.' + _cls + ' {-webkit-transform: matrix('+ _scale + ', 0, 0, ' + _scale + ', ' + _dx + ', ' + _dy + ');-moz-transform: matrix('+ _scale + ', 0, 0, ' + _scale + ', ' + _dx + 'px, ' + _dy + 'px)} ';
-			var _css = Ext.util.CSS.createStyleSheet(_cssText);
-			
-			me.freeze();
-			me.addCls(_cls);
-			me.transformed = true;	
-		}
-		return me;
-	},
-	
-	/**
-	 * @public
-	 * 
-	 */
-	resetTransform: function() {
-		var me = this;
-		if(me.transformed) {
-			var _cls = 'XWindow-transform-' + me.id;
-			me.removeCls(_cls);
-			me.transformed = false;
-			me.defreeze();
-		}
-	},
-	
-	
-	/**
-	 * @private
-	 * @override 
-	 * emptyFn to disable maximize and restore tool(button in header);
-	 */
-	addTools: Ext.emptyFn,
-	
-	
-	/**
-	 * @override
-	 * @private
-	 * 
-	 */
-	afterRender: function() {
-		var me = this;
-		me.callParent();
-		var _wa = Beaux.sys.desktop.lib.WindowArranger;
+    /**
+     * @public
+     * @returns {Beaux.sys.desktop.lib.XWindow}
+     */
+    transform: function(_scale, _dx, _dy) {
+        var me = this;
+        if(!me.transformed) {
+            var _cls = 'XWindow-transform-' + me.id;
+            var _cssText = '.' + _cls + ' {-webkit-transform: matrix('+ _scale + ', 0, 0, ' + _scale + ', ' + _dx + ', ' + _dy + ');-moz-transform: matrix('+ _scale + ', 0, 0, ' + _scale + ', ' + _dx + 'px, ' + _dy + 'px)} ';
+            var _css = Ext.util.CSS.createStyleSheet(_cssText);
+            
+            me.freeze();
+            me.addCls(_cls);
+            me.transformed = true;    
+        }
+        return me;
+    },
+    
+    /**
+     * @public
+     * 
+     */
+    resetTransform: function() {
+        var me = this;
+        if(me.transformed) {
+            var _cls = 'XWindow-transform-' + me.id;
+            me.removeCls(_cls);
+            me.transformed = false;
+            me.defreeze();
+        }
+    },
+    
+    
+    /**
+     * @private
+     * @override 
+     * emptyFn to disable maximize and restore tool(button in header);
+     */
+    addTools: Ext.emptyFn,
+    
+    
+    /**
+     * @override
+     * @private
+     * 
+     */
+    afterRender: function() {
+        var me = this;
+        me.callParent();
+        var _wa = Beaux.sys.desktop.lib.WindowArranger;
         if(_wa.arranged) {
-			_wa.resetWindows();
-		}
-	},
-	
-	
-	/**
-	 * @override
-	 * @private
-	 *
-	 */
-	beforeDestroy: function() {
-		var me = this;
-		me.wm.deregisterWindow(me);
-		//me.desktop.getRootXWindow().getDesk().remove(me);		
-		me.callParent();
-	},
-	
-	onFreezeBodyClick: function() {
-		Beaux.sys.desktop.lib.WindowArranger.resetWindows();
-	},
+            _wa.resetWindows();
+        }
+    },
+    
+    
+    /**
+     * @override
+     * @private
+     *
+     */
+    beforeDestroy: function() {
+        var me = this;
+        me.wm.deregisterWindow(me);
+        //me.desktop.getRootXWindow().getDesk().remove(me);        
+        me.callParent();
+    },
+    
+    onFreezeBodyClick: function() {
+        Beaux.sys.desktop.lib.WindowArranger.resetWindows();
+    },
 
     /**
      * @override {@link Ext.window.Window.maximize()}

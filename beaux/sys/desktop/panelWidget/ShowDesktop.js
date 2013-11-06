@@ -1,12 +1,12 @@
 ﻿Ext.define('Beaux.sys.desktop.panelWidget.ShowDesktop', {
-	extend: 'Beaux.sys.desktop.lib.PanelWidget',
-	requires: [
-		'Beaux.sys.xserver.WindowManager',
-	],
-	
-	initComponent: function() {
+    extend: 'Beaux.sys.desktop.lib.PanelWidget',
+    requires: [
+        'Beaux.sys.xserver.WindowManager',
+    ],
+    
+    initComponent: function() {
         var me = this;
-		var wm = me.getWindowManager();
+        var wm = me.getWindowManager();
         me.items = [{
             xtype: 'button',
             enableToggle: true,
@@ -23,8 +23,8 @@
 
         me.callParent();
     },
-	
-	getWindowManager: function() {
-		return Beaux.sys.xserver.WindowManager;
-	},
+    
+    getWindowManager: function() {
+        return Beaux.sys.xserver.WindowManager;
+    },
 });
