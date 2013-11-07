@@ -23,6 +23,9 @@ Ext.define('Beaux.sys.xserver.XServer', {
     rootXWindow: null,
 
     /**
+     *************************************************************************
+     *                          private method
+     *************************************************************************
      * @private
      */
     setRootXWindow: function(win) {
