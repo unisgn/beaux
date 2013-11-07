@@ -1,6 +1,6 @@
 Ext.define('Beaux.sys.login.LoginManager', {
     singleton : true,
-    requires : ['Beaux.sys.xserver.XServer', ],
+    requires : ['Beaux.sys.xserver.XServer' ],
 
 
     rootXWindow : null,
@@ -25,5 +25,5 @@ Ext.define('Beaux.sys.login.LoginManager', {
     getAuthentication : function (_username_, _password_) {},
 
     // @public
-    getCurrentLoginUser : function () {},
+    getCurrentLoginUser : function () {}
 });

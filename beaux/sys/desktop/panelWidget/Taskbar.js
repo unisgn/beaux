@@ -1,7 +1,7 @@
 ﻿Ext.define('Beaux.sys.desktop.panelWidget.Taskbar', {
     extend: 'Beaux.sys.desktop.lib.PanelWidget',
     requires: [
-        'Beaux.sys.xserver.WindowManager',
+        'Beaux.sys.xserver.WindowManager'
     ],
     
     taskbar: null,
@@ -12,10 +12,10 @@
             enableOverflow: true,
             items: [
                 '&#160;'
-            ],
+            ]
         });
         me.items = [
-            me.taskbar,
+            me.taskbar
         ];
         me.initListeners();
 
@@ -80,10 +80,10 @@
         var me = this, wm;
         wm = me.getWindowManager();
         wm.on({
-            windowRegistered: function(win) {me.addTaskBtn(win)},
-            windowDeregistered: function(win) {me.removeTaskBtn(win)},
-            windowActivated: function(win) {me.activateTaskBtn(win)},
-            windowDeactivated: function(win) {me.deactivateTaskBtn(win)},
+            windowRegistered: function(win) {me.addTaskBtn(win);},
+            windowDeregistered: function(win) {me.removeTaskBtn(win);},
+            windowActivated: function(win) {me.activateTaskBtn(win);},
+            windowDeactivated: function(win) {me.deactivateTaskBtn(win);},
             scope: me
         });
 
@@ -106,5 +106,5 @@
     //---------------
     getWindowManager: function() {
         return Beaux.sys.xserver.WindowManager;
-    },
+    }
 });

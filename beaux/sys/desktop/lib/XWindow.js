@@ -3,7 +3,7 @@
 
     requires:[
         'Beaux.sys.desktop.lib.WindowManager',
-        'Beaux.sys.desktop.Cassie',
+        'Beaux.sys.desktop.Cassie'
     ],
     
     /**
@@ -35,7 +35,7 @@
      * set dymanic to make resize function with full dynamic contents;
      */
     resizable: {
-        dynamic: true,
+        dynamic: true
     },
 
     /**
@@ -280,7 +280,7 @@
             if (me.dd) {
                 me.dd.disable();
                 if (header) {
-                   header.removeCls(header.indicateDragCls)
+                   header.removeCls(header.indicateDragCls);
                 }
             }
             if (me.resizer) {
@@ -339,8 +339,8 @@
                 }
 
                 me.setPagePosition(endXY[0], endXY[1]);
-            }
+            };
         }
-    },
+    }
 
 });

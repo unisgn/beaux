@@ -143,7 +143,7 @@ Ext.define('Alcedo.apps.saleHub.ActivityPanel', {
                 me.replaceActivityPanel(me.singleCustomerAllActivityPanel);
             } else {
                 var store = Ext.create('Ext.data.Store', {
-                    model: 'Beaux.usr.alcedo.model.Activity',
+                    model: 'Beaux.usr.alcedo.model.Activity'
                 });
                 
                 me.singleCustomerAllActivityPanel = Ext.create('Ext.grid.Panel', {
@@ -156,7 +156,7 @@ Ext.define('Alcedo.apps.saleHub.ActivityPanel', {
                 me.replaceActivityPanel(me.allCustomerModeAllActivityPanel);
             } else {
                 var store = Ext.create('Ext.data.Store', {
-                    model: 'Beaux.usr.alcedo.model.Activity',
+                    model: 'Beaux.usr.alcedo.model.Activity'
                 });
                 me.allCustomerModeAllActivityPanel = Ext.create('Ext.grid.Panel', {
                 
@@ -218,6 +218,6 @@ Ext.define('Alcedo.apps.saleHub.ActivityPanel', {
             me.allCustomerMode = true;
             
         }
-    },
+    }
 
 });

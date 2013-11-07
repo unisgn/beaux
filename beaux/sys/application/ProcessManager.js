@@ -1,7 +1,7 @@
 ﻿Ext.define('Beaux.sys.application.ProcessManager', {
     singleton: true,
     requires: [
-        'Ext.util.MixedCollection',
+        'Ext.util.MixedCollection'
     ],
     processes: null,
     nextPID: null,
@@ -26,5 +26,5 @@
     },
     getNextPID: function() {
         return this.nextPID;
-    },
+    }
 });

@@ -1,7 +1,7 @@
 Ext.define('Beaux.sys.xserver.XServer', {
     singleton: true,
     requires: [
-          'Ext.container.Viewport',
+          'Ext.container.Viewport'
     ],
     
     /**
@@ -23,21 +23,24 @@ Ext.define('Beaux.sys.xserver.XServer', {
     rootXWindow: null,
 
     /**
-     * @private method
+     * @private
      */
     setRootXWindow: function(win) {
         this.rootXWindow = win;
     },
     
     /**
-     * @public interface
+     ***************************************************************************
+     *                             public interface
+     **************************************************************************
+     * @public
      */
     getRootXWindow: function() {
         return this.rootXWindow;
     },
 
     /**
-     * @public interface
+     * @public
      */
     resetRootXWindow: function(win) {
         var me = this;
@@ -51,10 +54,10 @@ Ext.define('Beaux.sys.xserver.XServer', {
     },
     
     /**
-     * @public interface
+     * @public
      */
     main: function() {
         var me = this;
         me.viewport = Ext.create('Ext.container.Viewport', {layout: 'fit'});
-    },    
+    }
 });

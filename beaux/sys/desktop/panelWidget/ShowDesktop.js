@@ -1,7 +1,7 @@
 ﻿Ext.define('Beaux.sys.desktop.panelWidget.ShowDesktop', {
     extend: 'Beaux.sys.desktop.lib.PanelWidget',
     requires: [
-        'Beaux.sys.xserver.WindowManager',
+        'Beaux.sys.xserver.WindowManager'
     ],
     
     initComponent: function() {
@@ -26,5 +26,5 @@
     
     getWindowManager: function() {
         return Beaux.sys.xserver.WindowManager;
-    },
+    }
 });

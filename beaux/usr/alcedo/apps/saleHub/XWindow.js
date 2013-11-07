@@ -2,7 +2,7 @@
     extend: 'Ext.beaux.sys.xserver.XWindow',
 
     requires: [
-        'Beaux.widget.SearchField',
+        'Beaux.widget.SearchField'
     ],
     layout: 'border',
     title: 'SaleHome',
@@ -27,7 +27,7 @@
         me.slavePanel = me.buildActivityPanel();
         me.items = [
             me.masterPanel,
-            me.slavePanel,
+            me.slavePanel
         ];
         
         me.callParent();
@@ -77,10 +77,10 @@
     buildCustomerList: function() {
         var me = this,
         search = Ext.create('Ext.beaux.widget.SearchField', {
-            store: me.customerStore,
+            store: me.customerStore
         }),
         allBtn = Ext.create('Ext.Button', {
-            text: 'All',
+            text: 'All'
         }),
         gridPanel = Ext.create('Ext.grid.Panel', {
             
@@ -108,7 +108,7 @@
     
     onAllCustomerClick: function() {
     
-    },
+    }
     
     
     

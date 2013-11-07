@@ -31,10 +31,10 @@
         me.banner = me.createBanner();
         me.items = [{
             region: 'north',
-            items: [me.banner],
+            items: [me.banner]
         },{
             region: 'center',
-            id: 'desk',
+            id: 'desk'
             
         }];
         
@@ -64,8 +64,8 @@
         
         var _panel = Ext.create('Beaux.sys.desktop.lib.EdgePanel', {
             items: [
-                _appMenu,
-            ],
+                _appMenu
+            ]
         });
         return _panel;
     },
@@ -85,6 +85,6 @@
     toggleArrangeWindows: function() {
         var _wa = Beaux.sys.desktop.lib.WindowArranger;
         _wa.toggleArrangeWindows();
-    },
+    }
     
 });

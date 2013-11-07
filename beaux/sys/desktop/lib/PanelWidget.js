@@ -5,5 +5,5 @@
         var me = this;
         
         me.callParent();
-    },
+    }
 });

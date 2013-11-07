@@ -6,6 +6,6 @@
     
     initComponent: function() {
         this.callParent();
-    },
+    }
     
 });

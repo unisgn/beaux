@@ -5,13 +5,13 @@
     
     fields: [{
         name: 'number',
-        type: 'string',
+        type: 'string'
     },{
         name: 'name',
-        type: 'string',
+        type: 'string'
     },{
         name: 'code',
-        type: 'string',
-    }],
+        type: 'string'
+    }]
 
 });

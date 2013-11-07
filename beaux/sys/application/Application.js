@@ -1,9 +1,9 @@
 ﻿Ext.define('Beaux.sys.application.Application', {
     mixins: {
-        observable: 'Ext.util.Observable',
+        observable: 'Ext.util.Observable'
     },
     requires: [
-        'Beaux.sys.application.ProcessManager',
+        'Beaux.sys.application.ProcessManager'
     ],
 
         
@@ -27,5 +27,5 @@
     terminate: function() {
         var me = this;
         me.getProcessManager().deregisterProcess(me);
-    },
+    }
 });

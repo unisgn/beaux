@@ -1,13 +1,12 @@
 Ext.define('Beaux.sys.desktop.lib.WindowManager', {
     singleton: true,
     mixins: {
-        observable: 'Ext.util.Observable',
+        observable: 'Ext.util.Observable'
     },
     requires: [
         'Ext.util.MixedCollection',
-        'Beaux.sys.desktop.lib.WindowArranger',
-    ],
-    //---------------------- 
+        'Beaux.sys.desktop.lib.WindowArranger'
+    ], 
 
     
     /**
@@ -66,7 +65,6 @@ Ext.define('Beaux.sys.desktop.lib.WindowManager', {
     deregisterWindow: function(_win) {
         var me = this;
         me.windows.remove(_win);
-    },    
-    
+    }
     
 });

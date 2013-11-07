@@ -4,19 +4,19 @@
     fields: [{
     },{
         name: 'type',
-        type: 'string',
+        type: 'string'
     },{
         name: 'number',
-        type: 'string',
+        type: 'string'
     },{
         name: 'date',
-        type: 'date',
+        type: 'date'
     },{
         name: 'amount',
-        type: 'int',
+        type: 'int'
     },{
         name: 'description',
-        type: 'string',
-    }],
+        type: 'string'
+    }]
     
 });

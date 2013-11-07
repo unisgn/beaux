@@ -2,7 +2,7 @@
 Ext.define('Beaux.sys.desktop.lib.WindowArranger', {
     singleton: true,
     requires:[
-        'Beaux.sys.desktop.Cassie',
+        'Beaux.sys.desktop.Cassie'
     ],
 
     /**
@@ -41,7 +41,8 @@ Ext.define('Beaux.sys.desktop.lib.WindowArranger', {
         var _winCount = me.getWindowManager().getWindows().length;
         if(_winCount > 0) {
             return me[me.arranged ? 'resetWindows':'arrangeWindows']();
-        }
+        } else
+            return null;
     },
 
     /**
@@ -145,5 +146,5 @@ Ext.define('Beaux.sys.desktop.lib.WindowArranger', {
             }
         }
         return _rt;
-    },
+    }
 });

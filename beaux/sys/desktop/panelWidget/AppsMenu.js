@@ -21,7 +21,7 @@
                         text: 'Logout',
                         handler: function() {
                             Ext.Ajax.request({
-                                url: '../logout/logout',
+                                url: '../logout/logout'
                             });
                         }
                     },{
@@ -30,9 +30,8 @@
                             Ext.Ajax.request({
                                 url:'../j_spring_security_check?j_username=root&j_password=root',
                                 method: 'POST'
-                            })
+                            });
                         }
-                    }
                     }]
                 },{
                     xtype: 'button',
@@ -48,13 +47,13 @@
                     xtype: 'button',
                     text: 'MasterData',
                     menu: [{
-                        text: 'Partner',
+                        text: 'Partner'
                     },{
-                        text: 'Material',
+                        text: 'Material'
                     },{
-                        text: 'Activity',
+                        text: 'Activity'
                     },{
-                        text: 'Document',
+                        text: 'Document'
                     }]
                 },{
                     xtype: 'button',
@@ -114,8 +113,8 @@
                     menu: [{
                         text: 'Express'
                     }]
-                }],
-            }),
+                }]
+            })
         ];
         
         me.callParent();
@@ -124,5 +123,5 @@
     
     getApplicationManager: function() {
         return Beaux.sys.application.ApplicationManager;
-    },
+    }
 });

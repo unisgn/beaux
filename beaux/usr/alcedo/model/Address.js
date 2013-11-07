@@ -3,19 +3,19 @@
     
     fields: [{
         name: 'country',
-        type: 'string',
+        type: 'string'
     },{
         name: 'state',
-        type: 'string',
+        type: 'string'
     },{
         name: 'city',
-        type: 'string',
+        type: 'string'
     },{
         name: 'addr',
-        type: 'string',
+        type: 'string'
     },{
         name: 'description',
-        type: 'string',
-    }],
+        type: 'string'
+    }]
     
 });

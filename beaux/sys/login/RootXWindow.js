@@ -1,7 +1,7 @@
 ﻿Ext.define('Beaux.sys.login.RootXWindow', {
     extend: 'Beaux.sys.xserver.RootXWindow',
     requires: [
-        'Beaux.sys.login.LoginForm',
+        'Beaux.sys.login.LoginForm'
         //'Alcedo.widget.Broadcast',
     ],
 
@@ -10,9 +10,9 @@
         me.items = [{
             x:500,
             y:200,
-            xtype: 'beaux.loginForm',
+            xtype: 'beaux.loginForm'
         }];
         
         me.callParent();
-    },
+    }
 });

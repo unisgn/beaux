@@ -2,7 +2,7 @@ Ext.define('Beaux.sys.desktop.Cassie', {
 
     singleton: true,
     requires: [
-        'Beaux.sys.xserver.XServer',
+        'Beaux.sys.xserver.XServer'
     ],
 
     /**
@@ -40,5 +40,5 @@ Ext.define('Beaux.sys.desktop.Cassie', {
     
     getRootXWindow: function() {
         return this.rootXWindow;
-    },
+    }
 });

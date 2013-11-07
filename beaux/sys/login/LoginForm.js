@@ -3,7 +3,7 @@
     alias: 'widget.beaux.loginForm',
     
     requires: [
-        'Beaux.sys.desktop.Cassie',
+        'Beaux.sys.desktop.Cassie'
     ],
     
     title: 'welcome login',
@@ -12,7 +12,7 @@
     layout: 'anchor',
     bodyPadding: '10px',
     defaults: {
-        anchor: '100%',
+        anchor: '100%'
     },
     defaultType: 'textfield',
     html: '<p/><p>Welcome Login Beaux.</p>',
@@ -21,7 +21,7 @@
         var me = this;
         me.items = [{
             fieldLabel: 'User Name',
-            name: 'username',
+            name: 'username'
 
         },{
             fieldLabel: 'Password',
@@ -31,12 +31,12 @@
             xtype: 'button',
             text: 'login',
             handler: me.loadDesktop,
-            scope: this,
+            scope: this
         }];
         this.callParent();
     },
     
     loadDesktop: function() {
         Beaux.sys.desktop.Cassie.main();
-    },
+    }
 });
