@@ -1,9 +1,21 @@
 ﻿Ext.define('Beaux.sys.desktop.panelWidget.AppsMenu', {
     extend: 'Beaux.sys.desktop.lib.PanelWidget',
     requires: [
-        'Beaux.sys.application.ApplicationManager'
+        'Beaux.sys.application.Application',
+        'Beaux.sys.application.ApplicationManager',
+        'Beaux.sys.desktop.lib.XWindow'
     ],
-    
+
+
+    i18n: {
+        menu_system: 'System',
+        menu_express: 'Express',
+        app_generalJournalEntry: 'GeneralJournalEntry',
+        app_financialAccounts: 'Accounts',
+        app_generalJournal: 'General Journal',
+        app_businessPartners: 'Business Partners'
+    },
+
     initComponent: function() {
         var me = this;
         var appMgr = me.getApplicationManager();
@@ -13,114 +25,48 @@
                     xtype: 'button',
                     text: 'System',
                     menu: [{
-                        text: 'Setup',
-                        menu: [{
-                            text: 'UOM'
-                        }]
-                    },{
-                        text: 'Logout',
+                        text: me.i18n.app_financialAccounts,
                         handler: function() {
-                            Ext.Ajax.request({
-                                url: '../logout/logout'
-                            });
+                            appMgr.launchApp('Jeeper.apps.account.FinancialAccount');
                         }
-                    },{
-                        text: 'login',
+                    }, {
+                        text: me.i18n.app_generalJournalEntry,
                         handler: function() {
-                            Ext.Ajax.request({
-                                url:'../j_spring_security_check?j_username=root&j_password=root',
-                                method: 'POST'
-                            });
+                            appMgr.launchApp('Jeeper.apps.journal.GeneralJournalEntry');
+                        }
+                    }, {
+                        text: me.i18n.app_generalJournal,
+                        handler: function() {
+                            appMgr.launchApp('Jeeper.apps.journal.GeneralJournal');
+                        }
+                    }, {
+                        text: me.i18n.app_businessPartners,
+                        handler: function() {
+                            appMgr.launchApp('Jeeper.apps.partner.Partner');
                         }
                     }]
-                },{
+                }, {
                     xtype: 'button',
-                    text: 'Company',
+                    text: 'Express',
                     menu: [{
-                        text: 'Department'
-                    },{
-                        text: 'Employee'
-                    },{
-                        text: 'Broadcast'
-                    }]
-                },{
-                    xtype: 'button',
-                    text: 'MasterData',
-                    menu: [{
-                        text: 'Partner'
-                    },{
-                        text: 'Material'
-                    },{
-                        text: 'Activity'
-                    },{
-                        text: 'Document'
-                    }]
-                },{
-                    xtype: 'button',
-                    text: 'Sale',
-                    menu: [{
-                        text: 'SaleHub'
-                    }]
-                },{
-                    xtype: 'button',
-                    text: 'Purchase',
-                    menu: [{
-                        text: 'PurchaseHub'
-                    }]
-                },{
-                    xtype: 'button',
-                    text: 'Factory',
-                    menu: [{
-                        text: 'FactoryHub'
-                    },{
-                        text: 'BOM'
-                    }]
-                },{
-                    xtype: 'button',
-                    text: 'Warehouse',
-                    menu: [{
-                        text: 'WarehouseHub'
-                    }]
-                },{
-                    xtype: 'button',
-                    text: 'Account',
-                    menu: [{
-                        text: 'ChartOfAccount'
-                    }]
-                },{
-                    xtype: 'button',
-                    text: 'Report'
-                },{
-                    xtype: 'button',
-                    text: 'Utils',
-                    menu: [{
-                        text: 'Task'
-                    },{
-                        text: 'Memo'
-                    },{
-                        text: 'MSG'
-                    },{
-                        text: 'Email'
-                    },{
-                        text: 'Calendar'
-                    },{
-                        text: 'Editor',
-                        handler: function() {appMgr.launchApp('Beaux.usr.apps.editor.Editor');}
-                    }]
-                },{
-                    xtype: 'button',
-                    text: 'Plugin',
-                    menu: [{
-                        text: 'Express'
+                        text: 'Express Company',
+                        handler: function() {
+                            appMgr.launchApp('Jeeper.apps.express.ExpressCompany');
+                        }
+                    }, {
+                        text: 'Express Form',
+                        handler: function() {
+                            appMgr.launchApp('Jeeper.apps.express.ExpressForm');
+                        }
                     }]
                 }]
             })
         ];
-        
+
         me.callParent();
-        
+
     },
-    
+
     getApplicationManager: function() {
         return Beaux.sys.application.ApplicationManager;
     }

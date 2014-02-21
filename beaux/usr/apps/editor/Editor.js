@@ -6,19 +6,23 @@
         //'Ext.form.field.TextArea'
     ],
     
-
+    statics: {
+        /**
+         * @static
+         */
+        main: function(cfg) {
+            return new this(cfg);
+        }
+    },
+    
     constructor: function() {
         this.callParent();
+        this.initXWindow();
     },
     
-    main: function() {
-        var me = this;
-        me.createWindow().show();
-        
-        me.callParent();
-    },
+
     
-    createWindow: function() {
+    initXWindow: function() {
         var me = this;
         var win = Ext.create('Beaux.sys.desktop.lib.XWindow', {
             title:'EditorEditorEditorEditorEditor',
@@ -42,8 +46,7 @@
             destroy: me.terminate,
             scope: me
         });
-
-        return win;
+        win.show();
     }
     
     

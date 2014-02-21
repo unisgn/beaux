@@ -26,7 +26,7 @@ Ext.define('Beaux.sys.desktop.lib.WindowManager', {
         me.windows = Ext.create('Ext.util.MixedCollection');
         
         me.windowArranger = Beaux.sys.desktop.lib.WindowArranger;
-        me.mixins.observable.constructor.call(this, config);
+        me.mixins.observable.constructor.call(this);
         
     },
     

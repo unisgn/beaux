@@ -1,0 +1,65 @@
+Ext.define('Jeeper.apps.partner.PartnerCard', {
+    extend: 'Jeeper.apps.ModelCard',
+
+    requires: [
+        'Jeeper.model.Partner'
+    ],
+
+    layout: 'fit',
+
+    model: 'Jeeper.model.Partner',
+    newTitle: 'new Partner',
+    titleProperty: 'name',
+    
+
+    buildModelCard: function() {
+        return Ext.create('Ext.form.Panel', {
+            width: 400,
+            bodyPadding: 5,
+            layout: {
+                type: 'vbox',
+                align: 'stretch'
+            },
+            fieldDefaults: {
+
+                labelWidth: 60,
+                labelAlign: 'right',
+                anchor: '100%'
+                //xtype: 'textfield'
+            },
+            defaultType: 'textfield',
+            items: [{
+                fieldLabel: 'Number',
+                name: 'number'
+            }, {
+                fieldLabel: 'Code',
+                name: 'code'
+            }, {
+                fieldLabel: 'Name',
+                name: 'name'
+            }, {
+                fieldLabel: 'SearchKey',
+                name: 'searchKey'
+            }, {
+                fieldLabel: 'Memo',
+                xtype: 'textarea',
+                name: 'description'
+            }, {
+                xtype: 'checkboxgroup',
+                fieldLabel: 'Role',
+                items:[{
+                    boxLabel: 'Customer',
+                    name: 'roleCustomer'
+                }, {
+                    boxLabel: 'Vendor',
+                    name: 'roleVendor'
+                }, {
+                    boxLabel: 'Employee',
+                    name: 'roleEmployee'
+                }]
+            }]
+        });
+
+    }
+    
+});

@@ -1,6 +1,8 @@
 ﻿Ext.define('Beaux.sys.desktop.lib.XWindow', {
     extend: 'Ext.window.Window',
 
+    alternateClassName: ['Beaux.sys.XWindow'],
+    
     requires:[
         'Beaux.sys.desktop.lib.WindowManager',
         'Beaux.sys.desktop.Cassie'
@@ -70,7 +72,7 @@
 
     /**
      * @property
-     * the application which this window belongs to
+     * the application by which this window been created
      */
     application: null,
 
@@ -84,7 +86,6 @@
     desktop: null,
     desk: null,
     
-    
     /**
      * @override
      * @private
@@ -96,7 +97,6 @@
         me.desktop = me.getDesktop();
         me.desk = me.getDesktop().getRootXWindow().getDesk();
         me.callParent(cfg);
-
         me.wm.registerWindow(me);
     },
 
@@ -133,14 +133,18 @@
         }
         
         /**
-         * when windows are arranged by WindowArranger, this onClick event would
+         * when windows are arranged by WindowArranger,
+         * this onClick event would
          * trigger an event to resetWindows and make sure 2 things:
-         * 1, when the close button clicked, only to close window without trigger resetWindows;
+         * 1, when the close button clicked, only to close window
+         * without trigger resetWindows;
          * 2, when the body of the window clicked, should trigger resetWindows;
-         * to achive this, an alternative way might be using the onActivate event, but with 2 problems:
+         * to achive this, an alternative way might be using the onActivate
+         * event, but with 2 problems:
          * 1, when the close button clicked, it would trigger the activate event, 
          * so to trigger resetWindows, not wanted;
-         * 2, when the body of the window clicked, the Ext wouldn't trigger the activate event,
+         * 2, when the body of the window clicked, the Ext wouldn't trigger
+         * the activate event,
          * (probably a BUG) and so can not trigger the resetWindows event, not wanted;
          *
          */

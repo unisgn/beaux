@@ -1,10 +1,11 @@
 ﻿Ext.define('Beaux.sys.application.ApplicationManager', {
     singleton: true,
-    
+    alternateClassName: ['Beaux.sys.AppMgr'],
     launchApp: function(_appCls, _cfg) {
-        Ext.require(_appCls);
         var cfg = _cfg || {};
-        _app = Ext.create(_appCls, cfg);
-        _app.main();
+        Ext.require(_appCls, function() {
+            Ext.ClassManager.get(_appCls).main(cfg);
+        });
+
     }
 });

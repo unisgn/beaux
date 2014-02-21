@@ -2,6 +2,7 @@ Ext.define('Beaux.core.Beaux', {
     singleton: true,
     requires: [
         'Beaux.sys.login.LoginManager',
+        'Beaux.sys.desktop.Cassie',
         'Beaux.sys.xserver.XServer',
         'Beaux.sys.application.ProcessManager'
     ],
@@ -16,10 +17,13 @@ Ext.define('Beaux.core.Beaux', {
     },
     
     main: function() {
-        var me = this;
         console.log('start beaux;');
-        Beaux.sys.xserver.XServer.main();
-        Beaux.sys.login.LoginManager.main();
+        Beaux.sys.xserver.XServer.main(); // prepare Xserver
+
+        
+        //Beaux.sys.login.LoginManager.main(); // launch login mgr
+
+        Beaux.sys.desktop.Cassie.main(); 
         console.log('beaux is ready;');
     }
 });

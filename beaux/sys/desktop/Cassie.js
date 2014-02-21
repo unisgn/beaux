@@ -4,7 +4,7 @@ Ext.define('Beaux.sys.desktop.Cassie', {
     requires: [
         'Beaux.sys.xserver.XServer'
     ],
-
+    
     /**
      * @private 
      * @property

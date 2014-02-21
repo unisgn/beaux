@@ -2,10 +2,5 @@
     extend: 'Ext.container.Container',
     alias: 'widget.beaux.RootXWindow',
 
-    baseCls: 'RootXWindow',
-    
-    initComponent: function() {
-        this.callParent();
-    }
-    
+    baseCls: 'RootXWindow'
 });
