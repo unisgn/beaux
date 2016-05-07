@@ -1,0 +1,4 @@
+Ext.define('Beaux.Application', {
+
+    
+});
