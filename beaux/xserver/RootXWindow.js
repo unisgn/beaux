@@ -1,4 +1,4 @@
-﻿;Ext.define('Beaux.lib.RootXWindow', {
+﻿;Ext.define('Beaux.xserver.RootXWindow', {
     extend: 'Ext.panel.Panel',
     alias: 'widget.beaux.RootXWindow',
 

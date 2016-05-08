@@ -1,11 +1,11 @@
-﻿Ext.define('Beaux.sys.lib.cassie.XWindow', {
+﻿Ext.define('Beaux.desktop.XWindow', {
     extend: 'Ext.window.Window',
 
-    alternateClassName: 'Cassie.XWindow',
+    alternateClassName: 'Beaux.XWindow',
     
     requires:[
-        'Beaux.sys.lib.cassie.WindowManager',
-        'Beaux.sys.lib.cassie.WindowArranger'
+        'Beaux.desktop.WindowManager',
+        'Beaux.desktop.WindowArranger'
     ],
     
     /**
@@ -92,15 +92,15 @@
      * @private
      */
     getWindowManager: function() {
-        return Beaux.sys.lib.cassie.WindowManager;
+        return Beaux.desktop.WindowManager;
     },
 
     /**
      * @private
-     * @returns {Beaux.sys.apps.cassie.Cassie|*}
+     * @returns {Beaux.desktop.Desktop|*}
      */
     getDesktop: function() {
-        return Beaux.sys.apps.cassie.Cassie;
+        return Beaux.desktop.Desktop;
     },
 
     /**
@@ -165,7 +165,7 @@
      * @param _scale
      * @param _dx
      * @param _dy
-     * @returns {Beaux.sys.lib.cassie.XWindow}
+     * @returns {Beaux.desktop.XWindow}
      */
     transform: function(_scale, _dx, _dy) {
         var me = this;
@@ -224,7 +224,7 @@
     afterRender: function() {
         var me = this;
         me.callParent();
-        var _wa = Beaux.sys.lib.cassie.WindowArranger;
+        var _wa = Beaux.desktop.WindowArranger;
         if(_wa.isArranged()) {
             _wa.resetWindows();
         }
@@ -247,7 +247,7 @@
      * @private
      */
     onFreezeBodyClick: function() {
-        Beaux.sys.lib.cassie.WindowArranger.resetWindows();
+        Beaux.desktop.WindowArranger.resetWindows();
     },
 
     /**

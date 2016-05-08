@@ -1,4 +1,4 @@
-﻿;Ext.define('Beaux.sys.lib.ApplicationLauncher', {
+﻿;Ext.define('Beaux.ApplicationLauncher', {
     singleton: true,
 
     /**

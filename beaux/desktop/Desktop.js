@@ -2,14 +2,14 @@ Ext.define('Beaux.desktop.Desktop', {
 
     singleton: true,
     requires: [
-        'Beaux.sys.lib.XServer',
-        'Beaux.sys.lib.RootXWindow'
+        'Beaux.xserver.XServer',
+        'Beaux.xserver.RootXWindow'
     ],
     
     /**
      * @private 
      * @property
-     * @type {Beaux.sys.apps.cassie.RootXWindow}
+     * @type {Beaux.desktop.RootXWindow}
      */
     rootXWindow: null,
 
@@ -23,7 +23,7 @@ Ext.define('Beaux.desktop.Desktop', {
      * @private
      */
     createRootXWindow: function() {
-        return Ext.create('Beaux.sys.apps.cassie.RootXWindow');
+        return Ext.create('Beaux.desktop.RootXWindow');
     },
 
     /**
@@ -34,7 +34,7 @@ Ext.define('Beaux.desktop.Desktop', {
         var me = this;
         Ext.log('start loading cassie desktop environment;');
         me.rootXWindow = me.createRootXWindow();
-        Beaux.sys.lib.XServer.setRootXWindow(me.rootXWindow);
+        Beaux.xserver.XServer.setRootXWindow(me.rootXWindow);
         Ext.log('cassie desktop environment loaded;');
         me.callParent();
     },

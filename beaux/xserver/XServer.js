@@ -1,4 +1,4 @@
-;Ext.define('Beaux.sys.lib.XServer', {
+;Ext.define('Beaux.xserver.XServer', {
     singleton: true,
     requires: [
         'Ext.container.Viewport'
@@ -14,14 +14,14 @@
     /**
      * @private
      * @property
-     * @type {Beaux.sys.lib.RootXWindow}
+     * @type {Beaux.xserver.RootXWindow}
      */
     rootXWindow: null,
 
 
     /**
      * @public
-     * @returns {Beaux.sys.lib.RootXWindow}
+     * @returns {Beaux.xserver.RootXWindow}
      */
     getRootXWindow: function() {
         return this.rootXWindow;

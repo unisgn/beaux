@@ -1,7 +1,7 @@
-﻿;Ext.define('Beaux.sys.apps.cassie.panelWidget.AppsMenu', {
+﻿;Ext.define('Beaux.desktop.panelWidget.AppsMenu', {
     extend: 'Ext.toolbar.Toolbar',
     requires: [
-        'Beaux.sys.lib.ApplicationLauncher'
+        'Beaux.ApplicationLauncher'
     ],
     /**
      * @override
@@ -9,7 +9,7 @@
     initComponent: function () {
         var me = this;
         Ext.apply(me, {
-            baseCls: 'cassie-edge-panel',
+            baseCls: 'desktop-edge-panel',
             defaults:{
                 margin:0,
                 padding: 5,
@@ -176,6 +176,6 @@
      * @param {Object} [cfg]
      */
     launchApp: function (appCls, cfg) {
-        Beaux.sys.lib.ApplicationLauncher.launch(appCls, cfg || {});
+        Beaux.ApplicationLauncher.launch(appCls, cfg || {});
     }
 });

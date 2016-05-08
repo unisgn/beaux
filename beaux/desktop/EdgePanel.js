@@ -1,4 +1,4 @@
-﻿Ext.define('Beaux.sys.lib.cassie.EdgePanel', {
+﻿Ext.define('Beaux.desktop.EdgePanel', {
     extend: 'Ext.container.Container',
-    baseCls: 'cassie-edge-panel'
+    baseCls: 'desktop-edge-panel'
 });

@@ -1,7 +1,7 @@
-Ext.define('Beaux.sys.lib.cassie.WindowArranger', {
+Ext.define('Beaux.desktop.WindowArranger', {
     singleton: true,
     requires:[
-        'Beaux.sys.apps.cassie.Cassie'
+        'Beaux.desktop.Desktop'
     ],
 
     /**
@@ -104,14 +104,14 @@ Ext.define('Beaux.sys.lib.cassie.WindowArranger', {
      * @returns {Object}
      */
     getDesk: function() {
-        return Beaux.sys.apps.cassie.Cassie.getRootXWindow().getDesk();
+        return Beaux.desktop.Desktop.getRootXWindow().getDesk();
     },
 
     /**
      * @private
      */
     getWindowManager: function() {
-        return Beaux.sys.lib.cassie.WindowManager;
+        return Beaux.desktop.WindowManager;
     },
 
     /**

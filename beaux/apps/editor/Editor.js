@@ -15,7 +15,7 @@
         },
 
         initXWindow: function () {
-            Ext.create('Beaux.sys.lib.cassie.XWindow', {
+            Ext.create('Beaux.desktop.XWindow', {
                 title: 'EditorEditorEditorEditorEditor',
                 width: 600,
                 height: 400,

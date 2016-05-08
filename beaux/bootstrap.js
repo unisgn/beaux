@@ -4,13 +4,13 @@ Ext.Loader.setConfig({
     enabled: true,
     paths: {
         'Beaux': '.',
-        'Finetrust':'../finetrust'
+        // 'Finetrust':'../finetrust'
     }
 });
 
-Ext.Loader.loadScript('./sys/lib/override.js');
+Ext.Loader.loadScript('boot/override/override.js');
 
-Ext.Loader.loadScript('./core/Beaux.js');
+Ext.Loader.loadScript('Beaux.js');
 
 
 // doesn't work on extjs5
@@ -18,7 +18,7 @@ Ext.Loader.loadScript('./core/Beaux.js');
     contextmenu: function(e) { e.stopEvent(); }
 });*/
 
-Ext.require('Beaux.sys.apps.loginmgr.LoginMgr');
+Ext.require('Beaux.login.LoginMgr');
 Ext.require('Beaux.desktop.Desktop');
 
 Ext.onReady(function () {

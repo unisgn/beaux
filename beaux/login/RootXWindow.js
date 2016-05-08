@@ -1,7 +1,7 @@
-﻿Ext.define('Beaux.sys.apps.loginmgr.RootXWindow', {
-    extend: 'Beaux.sys.lib.xserver.RootXWindow',
+﻿Ext.define('Beaux.login.RootXWindow', {
+    extend: 'Beaux.xserver.RootXWindow',
     requires: [
-        'Beaux.sys.apps.loginmgr.LoginForm'
+        'Beaux.login.LoginForm'
     ],
 
     initComponent: function() {

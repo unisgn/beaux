@@ -1,5 +1,5 @@
-﻿Ext.define('Beaux.sys.apps.cassie.RootXWindow', {
-    extend: 'Beaux.sys.lib.RootXWindow',
+﻿Ext.define('Beaux.desktop.RootXWindow', {
+    extend: 'Beaux.xserver.RootXWindow',
 
 
     /**
@@ -52,12 +52,12 @@
 
     /**
      * @private
-     * @returns {Beaux.sys.lib.cassie.EdgePanel}
+     * @returns {Beaux.desktop.EdgePanel}
      */
     createBanner: function() {
-        var _appMenu = Ext.create('Beaux.sys.apps.cassie.panelWidget.AppsMenu');
+        var _appMenu = Ext.create('Beaux.desktop.panelWidget.AppsMenu');
 
-        return Ext.create('Beaux.sys.lib.cassie.EdgePanel', {
+        return Ext.create('Beaux.desktop.EdgePanel', {
             items: [
                 _appMenu
             ]
@@ -66,7 +66,7 @@
 
     /**
      * @public
-     * @returns {Beaux.sys.lib.cassie.EdgePanel}
+     * @returns {Beaux.desktop.EdgePanel}
      */
     getDesk: function() {
         return this.body;
@@ -76,7 +76,7 @@
      * @private
      */
     toggleArrangeWindows: function() {
-        Beaux.sys.lib.cassie.WindowArranger.toggleArrangeWindows();
+        Beaux.desktop.WindowArranger.toggleArrangeWindows();
     }
     
 });

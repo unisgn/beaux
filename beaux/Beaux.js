@@ -1,3 +1,5 @@
+Beaux = Beaux || window['Beaux'] || {};
+
 ;(function () {
     /**
      * @private

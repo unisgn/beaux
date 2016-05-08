@@ -1,9 +1,9 @@
-﻿Ext.define('Beaux.sys.apps.loginmgr.LoginForm', {
+﻿Ext.define('Beaux.login.LoginForm', {
     extend: 'Ext.form.Panel',
     alias: 'widget.beaux.loginForm',
     
     requires: [
-        'Beaux.sys.apps.cassie.Cassie'
+        'Beaux.desktop.Desktop'
     ],
     
     title: 'welcome login',
@@ -37,6 +37,6 @@
     },
     
     loadDesktop: function() {
-        Beaux.sys.desktop.Cassie.main();
+        Beaux.desktop.Desktop.main();
     }
 });
